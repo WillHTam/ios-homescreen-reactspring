@@ -35848,7 +35848,104 @@ var _default = styled;
 exports.default = _default;
 },{"stylis/stylis.min":"../node_modules/stylis/stylis.min.js","stylis-rule-sheet":"../node_modules/stylis-rule-sheet/index.js","react":"../node_modules/react/index.js","@emotion/unitless":"../node_modules/@emotion/unitless/dist/unitless.browser.esm.js","react-is":"../node_modules/react-is/index.js","memoize-one":"../node_modules/memoize-one/dist/memoize-one.esm.js","prop-types":"../node_modules/prop-types/index.js","@emotion/is-prop-valid":"../node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js","merge-anything":"../node_modules/merge-anything/dist/index.esm.js","process":"../node_modules/process/browser.js"}],"components/Root/Springboard/ioswallpaper.jpeg":[function(require,module,exports) {
 module.exports = "/ioswallpaper.becdf3e3.jpeg";
-},{}],"components/Root/Springboard/Springboard.js":[function(require,module,exports) {
+},{}],"components/Root/Springboard/Folder/icon.png":[function(require,module,exports) {
+module.exports = "/icon.a16853c4.png";
+},{}],"components/Root/Springboard/Folder/Folder.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+var _icon = _interopRequireDefault(require("./icon.png"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _templateObject4() {
+  var data = _taggedTemplateLiteral(["\n    align-items: center;\n    display: flex;\n    flex-flow: column nowrap;\n    user-select: none;\n\n    :hover {\n        cursor: pointer;\n    }\n"]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n    color: white;\n    margin-top: 0.5rem;\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n    background-color: rgba(255, 255, 255, 0.5);\n    border-radius: 1rem;\n    box-sizing: border-box;\n    display: grid;\n    grid-gap: 0.25rem;\n    grid-template-columns: repeat(3, 1fr);\n    height: 5rem;\n    width: 5rem;\n    padding: 0.5rem;\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    border-radius: 0.25rem;\n    height: auto;\n    width: 100%;\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var AppIcon = _styledComponents.default.img(_templateObject()); // Width is 100% because grid-template columns will automatically
+// figure out what the width should be
+
+
+var FolderIcons = _styledComponents.default.div(_templateObject2());
+
+var FolderName = _styledComponents.default.span(_templateObject3());
+
+var Wrapper = _styledComponents.default.div(_templateObject4());
+
+var Folder = function Folder(_ref) {
+  var folder = _ref.folder;
+  return _react.default.createElement(Wrapper, null, _react.default.createElement(FolderIcons, null, _react.default.createElement(AppIcon, {
+    src: _icon.default
+  }), _react.default.createElement(AppIcon, {
+    src: _icon.default
+  }), _react.default.createElement(AppIcon, {
+    src: _icon.default
+  })), _react.default.createElement(FolderName, null, folder.name));
+};
+
+var _default = Folder;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","./icon.png":"components/Root/Springboard/Folder/icon.png"}],"components/Root/Springboard/Folder/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _Folder = _interopRequireDefault(require("./Folder"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _default = _Folder.default;
+exports.default = _default;
+},{"./Folder":"components/Root/Springboard/Folder/Folder.js"}],"components/Root/Springboard/Springboard.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -35862,10 +35959,12 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _ioswallpaper = _interopRequireDefault(require("./ioswallpaper.jpeg"));
 
+var _Folder = _interopRequireDefault(require("./Folder"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    background-image: url(", ");\n    background-position: center;\n    background-size: auto 100%;\n    height: 60rem;\n    width: 30rem;\n"]);
+  var data = _taggedTemplateLiteral(["\n    background-image: url(", ");\n    background-position: center;\n    background-size: auto 100%;\n    box-sizing: border-box;\n    display: grid;\n    grid-gap: 1.25rem 1rem;\n    grid-template-columns: repeat(4, 1fr);\n    padding: 2rem;\n    height: 60rem;\n    width: 30rem;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -35876,15 +35975,22 @@ function _templateObject() {
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var Wrapper = _styledComponents.default.div(_templateObject(), _ioswallpaper.default);
+var Wrapper = _styledComponents.default.div(_templateObject(), _ioswallpaper.default); //  box-sizing includes padding in element's total w and h
 
-var Springboard = function Springboard() {
-  return _react.default.createElement(Wrapper, null);
+
+var Springboard = function Springboard(_ref) {
+  var folders = _ref.folders;
+  return _react.default.createElement(Wrapper, null, folders.map(function (folder) {
+    return _react.default.createElement(_Folder.default, {
+      folder: folder,
+      key: folder.id
+    });
+  }));
 };
 
 var _default = Springboard;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","./ioswallpaper.jpeg":"components/Root/Springboard/ioswallpaper.jpeg"}],"components/Root/Springboard/index.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","./ioswallpaper.jpeg":"components/Root/Springboard/ioswallpaper.jpeg","./Folder":"components/Root/Springboard/Folder/index.js"}],"components/Root/Springboard/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -35944,8 +36050,24 @@ var GlobalStyle = (0, _styledComponents.createGlobalStyle)(_templateObject());
 
 var Wrapper = _styledComponents.default.div(_templateObject2());
 
+var FOLDERS = [{
+  id: 1,
+  name: 'Work'
+}, {
+  id: 2,
+  name: 'Productivity'
+}, {
+  id: 3,
+  name: 'Social'
+}, {
+  id: 4,
+  name: 'Education'
+}];
+
 var Root = function Root() {
-  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(GlobalStyle, null), _react.default.createElement(Wrapper, null, _react.default.createElement(_Springboard.default, null)));
+  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(GlobalStyle, null), _react.default.createElement(Wrapper, null, _react.default.createElement(_Springboard.default, {
+    folders: FOLDERS
+  })));
 };
 
 var _default = Root;
@@ -36004,7 +36126,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52588" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53242" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

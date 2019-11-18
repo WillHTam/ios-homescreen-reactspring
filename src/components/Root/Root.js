@@ -30,12 +30,19 @@ const Wrapper = styled.div `
     width: 100%
 `
 
+const FOLDERS =[
+    { id: 1, name: 'Work'},
+    { id: 2, name: 'Productivity'},
+    { id: 3, name: 'Social'},
+    { id: 4, name: 'Education'},
+]
+
 const Root = () => {
     return (
         <>
             <GlobalStyle />
             <Wrapper>
-                <Springboard />
+                <Springboard folders={FOLDERS} />
             </Wrapper>
         </>
     )
