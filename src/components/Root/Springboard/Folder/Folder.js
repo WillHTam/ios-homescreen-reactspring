@@ -38,15 +38,17 @@ const Wrapper = styled.div`
     }
 `
 
-const Folder = ({ folder }) => {
-    return <Wrapper>
-        <FolderIcons>
-            <AppIcon src={IconLogo} />
-            <AppIcon src={IconLogo} />
-            <AppIcon src={IconLogo} />
-        </FolderIcons>
-        <FolderName>{folder.name}</FolderName>
-    </Wrapper>
+const Folder = ({ folder, onOpen: pushOpen }) => {
+    return (
+        <Wrapper onClick={() => pushOpen()}>
+            <FolderIcons>
+                <AppIcon src={IconLogo} />
+                <AppIcon src={IconLogo} />
+                <AppIcon src={IconLogo} />
+            </FolderIcons>
+            <FolderName>{folder.name}</FolderName>
+        </Wrapper>
+    )
 }
 
 export default Folder

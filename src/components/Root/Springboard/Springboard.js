@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import wallpaper from './ioswallpaper.jpeg'
@@ -19,13 +19,22 @@ const Wrapper = styled.div`
 //  box-sizing includes padding in element's total w and h
 
 const Springboard = ({ folders }) => {
-    const [openedFolderId, setOpenedFolder]
+    const [openedFolderId, setOpenedFolderId] = useState(
+        null
+    )
 
-    return <Wrapper>
-        {folders.map(folder => (
-            <Folder folder={folder} key={folder.id} />
-        ))}
-    </Wrapper>
+    return(
+        <Wrapper>
+        <strong>{openedFolderId}</strong>
+            {folders.map(folder => (
+                <Folder 
+                    folder={folder} 
+                    key={folder.id} 
+                    onOpen={() => setOpenedFolderId(folder.id)}
+                />
+            ))}
+        </Wrapper>
+    )
 }
 
 export default Springboard
