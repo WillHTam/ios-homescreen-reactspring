@@ -35,6 +35,7 @@ const FOLDERS =[
     { id: 2, name: 'Productivity'},
     { id: 3, name: 'Social'},
     { id: 4, name: 'Education'},
+    { id: 4, name: 'Bear'},
 ]
 
 const Root = () => {
