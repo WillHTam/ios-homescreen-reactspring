@@ -38068,7 +38068,7 @@ var _reactSpring = require("react-spring");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    backdrop-filter: blur(20px);\n    height: 100%;\n    width: 100%;\n    left: 0;\n    top: 0;\n    position: absolute;\n    pointer-events: none;\n\n    :hover {\n        cursor: pointer;\n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n    backdrop-filter: blur(20px);\n    height: 100%;\n    width: 100%;\n    left: 0;\n    top: 0;\n    position: absolute;\n\n    :hover {\n        cursor: pointer;\n    }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -38079,17 +38079,34 @@ function _templateObject() {
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var Wrapper = (0, _styledComponents.default)(_reactSpring.animated.div)(_templateObject());
+var Wrapper = (0, _styledComponents.default)(_reactSpring.animated.div)(_templateObject()); // need these because need to create the capability
+// of when to capture pointer events
+// instead of always 'pointer-events: none' in the CSS
+
+var MAXIMUM_BLUR = 20;
+var MINIMUM_OPEN_AMOUNT_ON_SHOW = 0.1; // min to enable pointer events
+
+var MINIMUM_OPEN_AMOUNT_ON_HIDE = 0.9; // when to disable
 
 var OpenedFolderBackdrop = function OpenedFolderBackdrop(_ref) {
-  var isVisible = _ref.isVisible;
+  var isVisible = _ref.isVisible,
+      pushClose = _ref.onClose;
   var spring = (0, _reactSpring.useSpring)({
     openAmount: isVisible ? 1 : 0
   });
   var style = {
-    opacity: spring.openAmount
+    backdropFilter: spring.openAmount.interpolate(function (openAmount) {
+      return "blur(".concat(openAmount * MAXIMUM_BLUR, "px)");
+    }),
+    opacity: spring.openAmount,
+    pointerEvents: spring.openAmount.interpolate(function (openAmount) {
+      return isVisible && openAmount >= MINIMUM_OPEN_AMOUNT_ON_SHOW || !isVisible && openAmount >= MINIMUM_OPEN_AMOUNT_ON_HIDE ? 'auto' : 'none';
+    })
   };
   return _react.default.createElement(Wrapper, {
+    onClick: function onClick() {
+      return pushClose();
+    },
     style: style
   });
 };
@@ -38170,7 +38187,10 @@ var Springboard = function Springboard(_ref) {
       setOpenedFolderId = _useState2[1];
 
   return _react.default.createElement(Wrapper, null, _react.default.createElement(_OpenedFolderBackdrop.default, {
-    isVisible: openedFolderId !== null
+    isVisible: openedFolderId !== null,
+    onClose: function onClose() {
+      return setOpenedFolderId(null);
+    }
   }), folders.map(function (folder) {
     return _react.default.createElement(_Folder.default, {
       folder: folder,

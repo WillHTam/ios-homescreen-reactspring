@@ -32,7 +32,10 @@ const Springboard = ({ folders }) => {
 
     return(
         <Wrapper>
-            <OpenedFolderBackdrop isVisible={openedFolderId !== null} />
+            <OpenedFolderBackdrop 
+                isVisible={openedFolderId !== null}
+                onClose={() => setOpenedFolderId(null)}
+            />
             {folders.map(folder => (
                 <Folder 
                     folder={folder} 
