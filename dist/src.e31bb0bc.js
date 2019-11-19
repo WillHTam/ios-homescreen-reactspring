@@ -35848,109 +35848,7 @@ var _default = styled;
 exports.default = _default;
 },{"stylis/stylis.min":"../node_modules/stylis/stylis.min.js","stylis-rule-sheet":"../node_modules/stylis-rule-sheet/index.js","react":"../node_modules/react/index.js","@emotion/unitless":"../node_modules/@emotion/unitless/dist/unitless.browser.esm.js","react-is":"../node_modules/react-is/index.js","memoize-one":"../node_modules/memoize-one/dist/memoize-one.esm.js","prop-types":"../node_modules/prop-types/index.js","@emotion/is-prop-valid":"../node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js","merge-anything":"../node_modules/merge-anything/dist/index.esm.js","process":"../node_modules/process/browser.js"}],"components/Root/Springboard/ioswallpaper.jpeg":[function(require,module,exports) {
 module.exports = "/ioswallpaper.becdf3e3.jpeg";
-},{}],"components/Root/Springboard/Folder/icon.png":[function(require,module,exports) {
-module.exports = "/icon.a16853c4.png";
-},{}],"components/Root/Springboard/Folder/Folder.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-var _styledComponents = _interopRequireDefault(require("styled-components"));
-
-var _icon = _interopRequireDefault(require("./icon.png"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n    align-items: center;\n    display: flex;\n    flex-flow: column nowrap;\n    user-select: none;\n\n    :hover {\n        cursor: pointer;\n    }\n"]);
-
-  _templateObject4 = function _templateObject4() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n    color: white;\n    margin-top: 0.5rem;\n"]);
-
-  _templateObject3 = function _templateObject3() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n    background-color: rgba(255, 255, 255, 0.5);\n    border-radius: 1rem;\n    box-sizing: border-box;\n    display: grid;\n    grid-gap: 0.25rem;\n    grid-template-columns: repeat(3, 1fr);\n    height: 5rem;\n    width: 5rem;\n    padding: 0.5rem;\n"]);
-
-  _templateObject2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    border-radius: 0.25rem;\n    height: auto;\n    width: 100%;\n"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-var AppIcon = _styledComponents.default.img(_templateObject()); // Width is 100% because grid-template columns will automatically
-// figure out what the width should be
-
-
-var FolderIcons = _styledComponents.default.div(_templateObject2());
-
-var FolderName = _styledComponents.default.span(_templateObject3());
-
-var Wrapper = _styledComponents.default.div(_templateObject4());
-
-var Folder = function Folder(_ref) {
-  var folder = _ref.folder,
-      pushOpen = _ref.onOpen;
-  return _react.default.createElement(Wrapper, {
-    onClick: function onClick() {
-      return pushOpen();
-    }
-  }, _react.default.createElement(FolderIcons, null, _react.default.createElement(AppIcon, {
-    src: _icon.default
-  }), _react.default.createElement(AppIcon, {
-    src: _icon.default
-  }), _react.default.createElement(AppIcon, {
-    src: _icon.default
-  })), _react.default.createElement(FolderName, null, folder.name));
-};
-
-var _default = Folder;
-exports.default = _default;
-},{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","./icon.png":"components/Root/Springboard/Folder/icon.png"}],"components/Root/Springboard/Folder/index.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _Folder = _interopRequireDefault(require("./Folder"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var _default = _Folder.default;
-exports.default = _default;
-},{"./Folder":"components/Root/Springboard/Folder/Folder.js"}],"../node_modules/@babel/runtime/helpers/esm/extends.js":[function(require,module,exports) {
+},{}],"../node_modules/@babel/runtime/helpers/esm/extends.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38051,7 +37949,312 @@ const apply = merge(createAnimatedComponent, false);
 exports.apply = apply;
 const extendedAnimated = apply(domElements);
 exports.a = exports.animated = extendedAnimated;
-},{"@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","react":"../node_modules/react/index.js"}],"components/Root/Springboard/OpenedFolderBackdrop/OpenedFolderBackdrop.js":[function(require,module,exports) {
+},{"@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","react":"../node_modules/react/index.js"}],"config/styled-components.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.REM_IN_PX = void 0;
+var REM_IN_PX = 16;
+exports.REM_IN_PX = REM_IN_PX;
+},{}],"helpers/interpolate.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var interpolate = function interpolate(num1, num2, amount) {
+  return num1 + (num2 - num1) * amount;
+}; // interpolate(0, 10, 0.2) => 2
+// useful in ReactSpring to know where you are in an animation
+
+
+var _default = interpolate;
+exports.default = _default;
+},{}],"components/Root/Springboard/Folder/_useInterpolatedStyles.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = require("react");
+
+var _reactSpring = require("react-spring");
+
+var _styledComponents = require("#root/config/styled-components");
+
+var _interpolate = _interopRequireDefault(require("#root/helpers/interpolate"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var FOLDER_ICONS_CLOSED_SIZE_REM = 5;
+var FOLDER_ICONS_OPENED_SIZE_REM = 25;
+var BORDER_RADIUS_CLOSED_REM = 0.25;
+var BORDER_RADIUS_OPENED_REM = FOLDER_ICONS_OPENED_SIZE_REM / FOLDER_ICONS_CLOSED_SIZE_REM * BORDER_RADIUS_CLOSED_REM;
+var GRID_GAP_CLOSED_REM = 0.25;
+var GRID_GAP_OPENED_REM = 2;
+var OPENED_FOLDER_NAME_SHOW_DELAY_MS = 500;
+var OPENED_FOLDER_NAME_OFFSET_REM = 22;
+var PADDING_CLOSED_REM = 0.5;
+var PADDING_OPENED_REM = 2;
+var SPRING_CONFIG = {
+  friction: 40,
+  tension: 400
+}; // get middle of the screen in relation to browser window
+
+var getMiddle = function getMiddle(element) {
+  var middleLeft = 0,
+      middleTop = 0;
+
+  if (element) {
+    var wrapperBoundingClientRect = element.getBoundingClientRect();
+    middleLeft = wrapperBoundingClientRect.width / 2;
+    middleTop = wrapperBoundingClientRect.height / 2;
+  }
+
+  return {
+    middleLeft: middleLeft,
+    middleTop: middleTop
+  };
+}; // get relative location of the folder icon's div relative to the parent component
+// ie the springboard
+
+
+var getRelativeRect = function getRelativeRect(element, wrapper) {
+  if (!element || !wrapper) return {
+    height: 0,
+    left: 0,
+    top: 0,
+    width: 0
+  };
+  var elementBoundingClientRect = element.getBoundingClientRect();
+  var wrapperBoundingClientRect = wrapper.getBoundingClientRect();
+  return {
+    height: elementBoundingClientRect.height,
+    left: elementBoundingClientRect.left - wrapperBoundingClientRect.left,
+    top: elementBoundingClientRect.top - wrapperBoundingClientRect.top,
+    width: elementBoundingClientRect.width
+  };
+};
+
+var useInterpolatedStyles = function useInterpolatedStyles(_ref) {
+  var folderIconsRef = _ref.folderIconsRef,
+      isOpened = _ref.isOpened,
+      parentRef = _ref.parentRef;
+  var mainSpring = (0, _reactSpring.useSpring)({
+    config: SPRING_CONFIG,
+    openAmount: isOpened ? 1 : 0
+  });
+  var folderIconsRectRef = (0, _react.useRef)({});
+  var parentRectRef = (0, _react.useRef)({}); // need to be inside useEffect so that it it occurs after the component loads
+  // otherwise the two consts above might be null
+
+  (0, _react.useEffect)(function () {
+    // Get the relative location of the components on the Springboard
+    folderIconsRectRef.current = getRelativeRect(folderIconsRef.current, parentRef.current); // get the middle of the springboard
+
+    parentRectRef.current = getMiddle(parentRef.current);
+  }, []); // need this instead of typing mainSpring.openAmount.interpolate 
+  // over and over. and .bind to give i the correct this context
+
+  var i = mainSpring.openAmount.interpolate.bind(mainSpring.openAmount);
+  var _parentRectRef$curren = parentRectRef.current,
+      middleLeft = _parentRectRef$curren.middleLeft,
+      middleTop = _parentRectRef$curren.middleTop;
+  var folderIconsSize = i(function (openAmount) {
+    return "".concat((0, _interpolate.default)(FOLDER_ICONS_CLOSED_SIZE_REM, FOLDER_ICONS_OPENED_SIZE_REM, openAmount), "rem");
+  });
+  var appIconStyle = {
+    borderRadius: i(function (openAmount) {
+      return "".concat((0, _interpolate.default)(BORDER_RADIUS_CLOSED_REM, BORDER_RADIUS_OPENED_REM, openAmount), "rem");
+    })
+  };
+  var folderIconsStyle = {
+    left: i(function (openAmount) {
+      return openAmount === 0 ? "auto" : (0, _interpolate.default)(folderIconsRectRef.current.left, middleLeft - FOLDER_ICONS_OPENED_SIZE_REM * _styledComponents.REM_IN_PX / 2, openAmount);
+    }),
+    gridGap: i(function (openAmount) {
+      return "".concat((0, _interpolate.default)(GRID_GAP_CLOSED_REM, GRID_GAP_OPENED_REM, openAmount), "rem");
+    }),
+    height: folderIconsSize,
+    padding: i(function (openAmount) {
+      return "".concat((0, _interpolate.default)(PADDING_CLOSED_REM, PADDING_OPENED_REM, openAmount), "rem");
+    }),
+    position: i(function (openAmount) {
+      return openAmount === 0 ? "static" : "absolute";
+    }),
+    top: i(function (openAmount) {
+      return openAmount === 0 ? "auto" : (0, _interpolate.default)(folderIconsRectRef.current.top, middleTop - FOLDER_ICONS_OPENED_SIZE_REM * _styledComponents.REM_IN_PX / 2, openAmount);
+    }),
+    width: folderIconsSize
+  };
+  var openedFolderNameSpring = (0, _reactSpring.useSpring)({
+    config: SPRING_CONFIG,
+    delay: isOpened ? OPENED_FOLDER_NAME_SHOW_DELAY_MS : 0,
+    from: {
+      opacity: 0
+    },
+    to: {
+      opacity: isOpened ? 1 : 0
+    }
+  });
+  var openedFolderNameStyle = {
+    left: "".concat(middleLeft, "px"),
+    opacity: openedFolderNameSpring.opacity,
+    top: "".concat(middleTop - OPENED_FOLDER_NAME_OFFSET_REM * _styledComponents.REM_IN_PX, "px")
+  };
+  return {
+    appIconStyle: appIconStyle,
+    folderIconsStyle: folderIconsStyle,
+    openedFolderNameStyle: openedFolderNameStyle
+  };
+};
+
+var _default = useInterpolatedStyles;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","react-spring":"../node_modules/react-spring/web.js","#root/config/styled-components":"config/styled-components.js","#root/helpers/interpolate":"helpers/interpolate.js"}],"components/Root/Springboard/Folder/icon.png":[function(require,module,exports) {
+module.exports = "/icon.a16853c4.png";
+},{}],"components/Root/Springboard/Folder/Folder.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _reactSpring = require("react-spring");
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+var _useInterpolatedStyles = _interopRequireDefault(require("./_useInterpolatedStyles"));
+
+var _icon = _interopRequireDefault(require("./icon.png"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _templateObject5() {
+  var data = _taggedTemplateLiteral(["\n    align-items: center;\n    display: flex;\n    flex-flow: column-reverse nowrap;\n    user-select: none;\n\n    :hover {\n        cursor: pointer;\n    }\n"]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  var data = _taggedTemplateLiteral(["\n    color: white;\n    font-size: 2.5rem;\n    pointer-events: none;\n    position: absolute;\n    transform: translate(-50%, -50%);\n"]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n    color: white;\n    margin-top: 0.5rem;\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n    background-color: rgba(255, 255, 255, 0.5);\n    border-radius: 1rem;\n    box-sizing: border-box;\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    border-radius: 0.25rem;\n    height: auto;\n    width: 100%;\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var AppIcon = (0, _styledComponents.default)(_reactSpring.animated.img)(_templateObject());
+var FolderIcons = (0, _styledComponents.default)(_reactSpring.animated.div)(_templateObject2());
+
+var FolderName = _styledComponents.default.span(_templateObject3());
+
+var OpenedFolderName = (0, _styledComponents.default)(_reactSpring.animated.span)(_templateObject4());
+var Wrapper = (0, _styledComponents.default)(_reactSpring.animated.div)(_templateObject5());
+
+var Folder = function Folder(_ref) {
+  var folder = _ref.folder,
+      isOpened = _ref.isOpened,
+      pushOpen = _ref.onOpen,
+      parentRef = _ref.parentRef;
+  var folderIconsRef = (0, _react.useRef)();
+
+  var _useInterpolatedStyle = (0, _useInterpolatedStyles.default)({
+    folderIconsRef: folderIconsRef,
+    isOpened: isOpened,
+    parentRef: parentRef
+  }),
+      appIconStyle = _useInterpolatedStyle.appIconStyle,
+      folderIconsStyle = _useInterpolatedStyle.folderIconsStyle,
+      openedFolderNameStyle = _useInterpolatedStyle.openedFolderNameStyle;
+
+  return _react.default.createElement(Wrapper, {
+    onClick: pushOpen
+  }, _react.default.createElement(FolderName, null, folder.name), _react.default.createElement(OpenedFolderName, {
+    style: openedFolderNameStyle
+  }, folder.name), _react.default.createElement(FolderIcons, {
+    ref: folderIconsRef,
+    style: folderIconsStyle
+  }, _react.default.createElement(AppIcon, {
+    src: _icon.default,
+    style: appIconStyle
+  }), _react.default.createElement(AppIcon, {
+    src: _icon.default,
+    style: appIconStyle
+  }), _react.default.createElement(AppIcon, {
+    src: _icon.default,
+    style: appIconStyle
+  })));
+};
+
+var _default = Folder;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","react-spring":"../node_modules/react-spring/web.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","./_useInterpolatedStyles":"components/Root/Springboard/Folder/_useInterpolatedStyles.js","./icon.png":"components/Root/Springboard/Folder/icon.png"}],"components/Root/Springboard/Folder/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _Folder = _interopRequireDefault(require("./Folder"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _default = _Folder.default;
+exports.default = _default;
+},{"./Folder":"components/Root/Springboard/Folder/Folder.js"}],"components/Root/Springboard/OpenedFolderBackdrop/OpenedFolderBackdrop.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38179,14 +38382,16 @@ var Wrapper = _styledComponents.default.div(_templateObject(), _ioswallpaper.def
 
 var Springboard = function Springboard(_ref) {
   var folders = _ref.folders;
+  var wrapperRef = (0, _react.useRef)(); // with openedFolderId we know which folder is currently open
 
-  // with openedFolderId we know which folder is currently open
   var _useState = (0, _react.useState)(null),
       _useState2 = _slicedToArray(_useState, 2),
       openedFolderId = _useState2[0],
       setOpenedFolderId = _useState2[1];
 
-  return _react.default.createElement(Wrapper, null, _react.default.createElement(_OpenedFolderBackdrop.default, {
+  return _react.default.createElement(Wrapper, {
+    ref: wrapperRef
+  }, _react.default.createElement(_OpenedFolderBackdrop.default, {
     isVisible: openedFolderId !== null,
     onClose: function onClose() {
       return setOpenedFolderId(null);
@@ -38197,7 +38402,9 @@ var Springboard = function Springboard(_ref) {
       key: folder.id,
       onOpen: function onOpen() {
         return setOpenedFolderId(folder.id);
-      }
+      },
+      parentRef: wrapperRef,
+      isOpened: folder.id === openedFolderId
     });
   }));
 };
@@ -38277,7 +38484,7 @@ var FOLDERS = [{
   id: 4,
   name: 'Education'
 }, {
-  id: 4,
+  id: 5,
   name: 'Bear'
 }];
 
@@ -38343,7 +38550,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53824" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54964" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

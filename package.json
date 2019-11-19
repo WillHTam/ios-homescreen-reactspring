@@ -17,5 +17,8 @@
     "react-spring": "^8.0.27",
     "src": "^1.1.2",
     "styled-components": "^4.4.1"
+  },
+  "alias": {
+    "#root": "./src"
   }
 }

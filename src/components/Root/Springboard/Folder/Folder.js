@@ -1,54 +1,68 @@
-import React from 'react'
-import styled from 'styled-components'
-import IconLogo from './icon.png'
+import React, { useRef } from "react";
+import { animated } from "react-spring";
+import styled from "styled-components";
 
-const AppIcon = styled.img`
+import useInterpolatedStyles from "./_useInterpolatedStyles";
+import appLogo from './icon.png'
+
+const AppIcon = styled(animated.img)`
     border-radius: 0.25rem;
     height: auto;
     width: 100%;
-`
-// Width is 100% because grid-template columns will automatically
-// figure out what the width should be
+`;
 
-const FolderIcons = styled.div`
+const FolderIcons = styled(animated.div)`
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 1rem;
     box-sizing: border-box;
     display: grid;
-    grid-gap: 0.25rem;
     grid-template-columns: repeat(3, 1fr);
-    height: 5rem;
-    width: 5rem;
-    padding: 0.5rem;
-`
+`;
 
 const FolderName = styled.span`
     color: white;
     margin-top: 0.5rem;
-`
+`;
 
-const Wrapper = styled.div`
+const OpenedFolderName = styled(animated.span)`
+    color: white;
+    font-size: 2.5rem;
+    pointer-events: none;
+    position: absolute;
+    transform: translate(-50%, -50%);
+`;
+
+const Wrapper = styled(animated.div)`
     align-items: center;
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: column-reverse nowrap;
     user-select: none;
 
     :hover {
         cursor: pointer;
     }
-`
+`;
 
-const Folder = ({ folder, onOpen: pushOpen }) => {
+const Folder = ({ folder, isOpened, onOpen: pushOpen, parentRef }) => {
+    const folderIconsRef = useRef();
+
+    const { appIconStyle, folderIconsStyle, openedFolderNameStyle } = useInterpolatedStyles({
+        folderIconsRef,
+        isOpened,
+        parentRef
+    });
+
     return (
-        <Wrapper onClick={() => pushOpen()}>
-            <FolderIcons>
-                <AppIcon src={IconLogo} />
-                <AppIcon src={IconLogo} />
-                <AppIcon src={IconLogo} />
-            </FolderIcons>
+        <Wrapper onClick={pushOpen}>
             <FolderName>{folder.name}</FolderName>
+            <OpenedFolderName style={openedFolderNameStyle}>{folder.name}</OpenedFolderName>
+            <FolderIcons ref={folderIconsRef} style={folderIconsStyle}>
+                <AppIcon src={appLogo} style={appIconStyle} />
+                <AppIcon src={appLogo} style={appIconStyle} />
+                <AppIcon src={appLogo} style={appIconStyle} />
+            </FolderIcons>
         </Wrapper>
-    )
-}
+    );
+};
 
-export default Folder
+export default Folder;

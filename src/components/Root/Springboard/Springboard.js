@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import styled from 'styled-components'
 
 import wallpaper from './ioswallpaper.jpeg'
@@ -25,13 +25,14 @@ const Wrapper = styled.div`
 // by openedfolderbackdrop
 
 const Springboard = ({ folders }) => {
+    const wrapperRef = useRef()
     // with openedFolderId we know which folder is currently open
     const [openedFolderId, setOpenedFolderId] = useState(
         null
     )
 
     return(
-        <Wrapper>
+        <Wrapper ref={wrapperRef}>
             <OpenedFolderBackdrop 
                 isVisible={openedFolderId !== null}
                 onClose={() => setOpenedFolderId(null)}
@@ -41,6 +42,8 @@ const Springboard = ({ folders }) => {
                     folder={folder} 
                     key={folder.id} 
                     onOpen={() => setOpenedFolderId(folder.id)}
+                    parentRef={wrapperRef}
+                    isOpened={folder.id === openedFolderId}
                 />
             ))}
         </Wrapper>
