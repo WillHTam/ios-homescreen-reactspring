@@ -1,4 +1,4 @@
 # ios-homescreen-reactspring
-iOS Dashboard with React Spring
+With Hooks!
 
 use `yarn watch`
